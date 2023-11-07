@@ -1,0 +1,9 @@
+section {
+  background-image: url("../assets/BG-image.jpg");
+  background-size: cover;
+}
+
+.item1 {
+  background-image: url("../assets/Cannon-AE-1.jpg");
+  background-size: 100%;
+}
