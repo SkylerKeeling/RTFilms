@@ -96,7 +96,7 @@ export default function Navbar() {
             <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
               <li>
                 <a
-                  href="#"
+                  href="/SingleLens"
                   class="text-gray-900 dark:text-white hover:underline"
                   aria-current="page"
                 >
@@ -105,7 +105,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/PointShoot"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Point and Shoot
@@ -113,7 +113,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Lenses"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Lenses
@@ -121,7 +121,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Film"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Film
@@ -137,7 +137,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Clearance"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Clearance
