@@ -1,5 +1,5 @@
 import React from "react"
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import App from "./App.jsx"
 import SingleLens from "./components/SingleLens.jsx"
@@ -8,6 +8,9 @@ import Lenses from "./components/Lenses.jsx"
 import Film from "./components/Film.jsx"
 import Clearance from "./components/Clearance.jsx"
 import Home from "./components/Home.jsx"
+import Accessories from "./components/Accessories.jsx"
+import Signin from "./components/signin.jsx"
+import Signup from "./components/signup.jsx"
 
 const router = createBrowserRouter([
   {
@@ -35,8 +38,16 @@ const router = createBrowserRouter([
         element: <Film />,
       },
       {
-        path: "/Clearance",
-        element: <Clearance />,
+        path: "/Accessories",
+        element: <Accessories />,
+      },
+      {
+        path: "/Signin",
+        element: <Signin />,
+      },
+      {
+        path: "/Signup",
+        element: <Signup />,
       },
     ],
   },

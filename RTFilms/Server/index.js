@@ -1,7 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-const PasModel = require("./Motels/users")
+const PasModel = require("./Motels/pas")
+const SLRModel = require("./Motels/SLR")
 
 const app = express()
 app.use(cors())
@@ -15,6 +16,16 @@ app.get("/getPas", (req, res) => {
   PasModel.find({})
     .then(function (pas) {
       res.json(pas)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+})
+
+app.get("/getSLR", (req, res) => {
+  SLRModel.find({})
+    .then(function (SLR) {
+      res.json(SLR)
     })
     .catch(function (err) {
       res.json(err)

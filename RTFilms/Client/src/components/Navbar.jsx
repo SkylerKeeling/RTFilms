@@ -1,4 +1,7 @@
 import React from "react"
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Signin from "./signin"
+import Signup from "./signup"
 
 export default function Navbar() {
   return (
@@ -6,9 +9,12 @@ export default function Navbar() {
       <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <a class="flex items-center">
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <a
+              href="/"
+              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >
               RTFilms
-            </span>
+            </a>
           </a>
           <div class="flex items-center">
             <div class="flex md:order-2">
@@ -86,6 +92,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
+              <a href="/Signin">sign in</a>
             </div>
           </div>
         </div>
@@ -129,18 +136,10 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Accessories"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Accessories
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/Clearance"
-                  class="text-gray-900 dark:text-white hover:underline"
-                >
-                  Clearance
                 </a>
               </li>
             </ul>

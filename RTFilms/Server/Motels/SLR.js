@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
-const pasSchema = new mongoose.Schema({
-  productName: {
+const SLRSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
@@ -13,7 +13,7 @@ const pasSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  year: {
+  features: {
     type: Number,
     required: true,
   },
@@ -23,6 +23,6 @@ const pasSchema = new mongoose.Schema({
   },
 })
 
-const pasModel = mongoose.model("pas", pasSchema)
+const SLRModel = mongoose.model("SLR", SLRSchema)
 
-module.exports = pasModel
+module.exports = SLRModel
