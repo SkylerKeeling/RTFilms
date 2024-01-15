@@ -2,8 +2,13 @@ import React from "react"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Signin from "./signin"
 import Signup from "./signup"
+import {Modal, Button} from "react-bootstrap"
+import {useState} from "react"
 
 export default function Navbar() {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <>
       <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -93,6 +98,15 @@ export default function Navbar() {
                 </svg>
               </button>
               <a href="/Signin">sign in</a>
+              <Button variant="dark" show={show} onClick={handleShow}>
+                Cart
+              </Button>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Cart</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Cart Products</Modal.Body>
+              </Modal>
             </div>
           </div>
         </div>
