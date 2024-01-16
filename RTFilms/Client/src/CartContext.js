@@ -19,6 +19,28 @@ function getCartQuantity(_id) {
   return quantity
 }
 
+function addOneToCart(_id) {
+  const quantity = getProductQuantity(_id)
+
+  if (quantity == 0) {
+    ;[
+      ...setCartProducts,
+      {
+        _id: _id,
+        quantity: 1,
+      },
+    ]
+  } else {
+    setCartProducts(
+      cartProducts.map(product =>
+        product._id === _id
+          ? {...product, quantity: product.quantity + 1}
+          : product
+      )
+    )
+  }
+}
+
 export function CartProvider({Children}) {
   const [cartProducts, setCartProducts] = useState([])
   const contextValue = {
