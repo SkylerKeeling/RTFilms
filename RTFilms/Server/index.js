@@ -1,37 +1,36 @@
 const express = require("express")
-const mongoose = require("mongoose")
 const cors = require("cors")
-const PasModel = require("./Motels/pas")
-const SLRModel = require("./Motels/SLR")
-
+const stripe = require("stripe")(
+  "sk_test_51OZc5bAg1LP2ocYwVh8CyNQKGZng8P4aCp90g5udYzctNRDoBkHAoOQmhDFyNYzMYsgjOCepE2Uj1Ug6DsXB3MZ500C2Losxyk"
+)
 const app = express()
 app.use(cors())
+app.use(express.static("public"))
 app.use(express.json())
 
-mongoose.connect(
-  "mongodb+srv://xertzgaming1:obTbkU9XuKSzAI63@cluster0.b0rwnl2.mongodb.net/products?retryWrites=true&w=majority"
-)
+app.post("/checkout", async (req, res) => {
+  console.log(req.body)
+  const items = req.body.items
+  let lineItems = []
+  items.forEach(item => {
+    lineItems.push({
+      price: item.id,
+      quantity: item.quantity,
+    })
+  })
 
-app.get("/getPas", (req, res) => {
-  PasModel.find({})
-    .then(function (pas) {
-      res.json(pas)
+  const session = await stripe.checkout.sessions.create({
+    line_items: lineItems,
+    mode: "payment",
+    success_url: "http://localhost:5173/Success",
+    cancel_url: "http://localhost:3000/cancel",
+  })
+
+  res.send(
+    JSON.stringify({
+      url: session.url,
     })
-    .catch(function (err) {
-      res.json(err)
-    })
+  )
 })
 
-app.get("/getSLR", (req, res) => {
-  SLRModel.find({})
-    .then(function (SLR) {
-      res.json(SLR)
-    })
-    .catch(function (err) {
-      res.json(err)
-    })
-})
-
-app.listen(3001, () => {
-  console.log("Server is running")
-})
+app.listen(4000, () => console.log("Listening on port 4000!"))

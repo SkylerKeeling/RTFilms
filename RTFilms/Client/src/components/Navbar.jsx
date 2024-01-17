@@ -4,11 +4,40 @@ import Signin from "./signin"
 import Signup from "./signup"
 import {Modal, Button} from "react-bootstrap"
 import {useState} from "react"
+import {CartContext} from "../CartContext"
+import {useContext} from "react"
+import CartProduct from "./CartProduct"
 
 export default function Navbar() {
+  const cart = useContext(CartContext)
+
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
+  const checkout = async () => {
+    await fetch("http://localhost:4000/checkout", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({items: cart.items}),
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(response => {
+        if (response.url) {
+          window.location.assign(response.url)
+        }
+      })
+  }
+
+  const productCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  )
+
   return (
     <>
       <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -98,14 +127,42 @@ export default function Navbar() {
                 </svg>
               </button>
               <a href="/Signin">sign in</a>
-              <Button variant="dark" show={show} onClick={handleShow}>
-                Cart
+              <Button
+                className="visible bg-dark"
+                variant="dark"
+                show={show}
+                onClick={handleShow}
+              >
+                Cart ({productCount} Items)
               </Button>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Cart</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Cart Products</Modal.Body>
+                <Modal.Body>
+                  {productCount > 0 ? (
+                    <>
+                      <p>Items in your cart:</p>
+                      {cart.items.map((currentProduct, idx) => (
+                        <CartProduct
+                          key={idx}
+                          id={currentProduct.id}
+                          quantity={currentProduct.quantity}
+                        />
+                      ))}
+                      <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
+                      <Button
+                        variant="success"
+                        className="bg-success"
+                        onClick={checkout}
+                      >
+                        Checkout
+                      </Button>
+                    </>
+                  ) : (
+                    <h1>No items in cart</h1>
+                  )}
+                </Modal.Body>
               </Modal>
             </div>
           </div>

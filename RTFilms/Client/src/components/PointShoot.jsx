@@ -1,7 +1,10 @@
-import {pasProducts} from "../StoreProducts"
+import {productsArray} from "../StoreProducts"
 import ProductCard from "./ProductCard"
 
 function PointShoot() {
+  const pasProducts = productsArray.filter(
+    productsArray => productsArray.category === "pas"
+  )
   return (
     <>
       <div className="grid grid-cols-4 gap-4">

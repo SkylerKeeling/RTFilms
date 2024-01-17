@@ -1,4 +1,4 @@
-const slrProducts = [
+const productsArray = [
   {
     id: 1,
     name: "Canon Powershot SX10",
@@ -7,6 +7,8 @@ const slrProducts = [
     features: ["Bridge camera", "Powerful zoom lens", "Various shooting modes"],
     batteries: "Typically powered by rechargeable lithium-ion batteries.",
     imageUrl: "./public/images/SLR/CanonPowershotSX10.webp",
+    category: "slr",
+    price: 3400,
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ const slrProducts = [
     ],
     batteries: "Powered by (AA batteries).",
     imageUrl: "./public/images/SLR/FujifilmS5500.webp",
+    category: "slr",
+    price: 3400,
   },
   {
     id: 3,
@@ -33,6 +37,8 @@ const slrProducts = [
     ],
     batteries: "Powered by (AA batteries).",
     imageUrl: "./public/images/SLR/KodakPixproAz252.webp",
+    category: "slr",
+    price: 3400,
   },
   {
     id: 4,
@@ -43,6 +49,8 @@ const slrProducts = [
     film: "35mm film",
     batteries: "Powered by a (CR123A battery).",
     imageUrl: "./public/images/SLR/OlympusMJUIII80.webp",
+    category: "slr",
+    price: 3400,
   },
   {
     id: 5,
@@ -57,6 +65,8 @@ const slrProducts = [
     film: "35mm film",
     batteries: "Powered by (SR44 or LR44 batteries).",
     imageUrl: "./public/images/SLR/OlympusOM-10.webp",
+    category: "slr",
+    price: 3400,
   },
   {
     id: 6,
@@ -71,12 +81,11 @@ const slrProducts = [
     film: "35mm film",
     batteries: "Powered by (SR44 or LR44 batteries).",
     imageUrl: "./public/images/SLR/OlympusOM-20.webp",
+    category: "slr",
+    price: 3400,
   },
-]
-
-const pasProducts = [
   {
-    id: 7,
+    id: "price_1OZcvZAg1LP2ocYwQuEEr98E",
     name: "Canon AF35M",
     description:
       "The Canon AF35M, also known as the Sure Shot, is like the 80s rockstar of film cameras. This compact autofocus wonder brings the nostalgia of neon lights and synth beats. With its 38mm f/2.8 lens, automatic focusing, and built-in flash, it's ready to capture your memories in true vintage style. The only backstage pass it needs? Two trusty AA batteries.",
@@ -89,6 +98,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Typically requires two AA batteries for power.",
     imageUrl: "./public/images/Canon AF35M.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 8,
@@ -106,6 +117,8 @@ const pasProducts = [
     batteries:
       "Usually powered by a lithium battery for camera functions and a separate AA battery for the flash.",
     imageUrl: "./public/images/Fujifilm Zoom Date 60 W.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 9,
@@ -121,6 +134,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Generally powered by AA batteries for camera functions.",
     imageUrl: "./public/images/Kodak 735.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 10,
@@ -136,6 +151,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Requires two AA batteries for power.",
     imageUrl: "./public/images/Konica Top's AF-300.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 11,
@@ -152,6 +169,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Typically uses two AA batteries for power.",
     imageUrl: "./public/images/Minolta Riva AF 35 C .webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 12,
@@ -168,6 +187,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Usually powered by two AA batteries.",
     imageUrl: "../../public/images/Nikon L35AF 2.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 13,
@@ -184,6 +205,8 @@ const pasProducts = [
     batteries:
       "The XA1 doesn't require batteries for basic operation; however, a battery is needed for the optional electronic flash.",
     imageUrl: "../../public/images/Olympus XA1.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 14,
@@ -200,6 +223,8 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Typically requires two AA batteries for power.",
     imageUrl: "../../public/images/Pentax PC35 AF.webp",
+    category: "pas",
+    price: 3400,
   },
   {
     id: 15,
@@ -215,18 +240,20 @@ const pasProducts = [
     film: "35mm film",
     batteries: "Usually powered by two AA batteries.",
     imageUrl: "../../public/images/Rollei Giro 105.webp",
+    category: "pas",
+    price: 3400,
   },
 ]
 
 function getProductData(id) {
-  let productSlrData = productsArray.find(products => products.slr.id === id)
-  let productPasData = productsArray.find(products => products.pas.id === id)
+  let productData = productsArray.find(product => product.id === id)
 
-  if (productPasData === undefined || productSlrData === undefined) {
-    console.log("Product data does not exist" + id)
+  if (productData == undefined) {
+    console.log("Product data does not exist for ID: " + id)
     return undefined
   }
-  return productPasData
+
+  return productData
 }
 
-export {pasProducts, slrProducts}
+export {productsArray, getProductData}
