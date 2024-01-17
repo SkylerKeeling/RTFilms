@@ -7,6 +7,7 @@ import {useState} from "react"
 import {CartContext} from "../CartContext"
 import {useContext} from "react"
 import CartProduct from "./CartProduct"
+import Searchbar from "./Searchbar"
 
 export default function Navbar() {
   const cart = useContext(CartContext)
@@ -74,7 +75,7 @@ export default function Navbar() {
                     d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                   />
                 </svg>
-                <span class="sr-only">Search</span>
+                <Searchbar />
               </button>
               <div class="relative hidden md:block">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

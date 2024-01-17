@@ -5,7 +5,6 @@ function ProductCard(props) {
   const product = props.product
   const cart = useContext(CartContext)
   const productQuantity = cart.getProductQuantity(product.id)
-  console.log(cart.items)
 
   return (
     <div class="w-full max-w-sm max-h-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
