@@ -1,33 +1,57 @@
 import {useState} from "react"
 import {productsArray} from "../StoreProducts"
-import {Dropdown, DropdownItem, DropdownMenu} from "react-bootstrap"
+import "./Searchbar.css"
 
-const getfilteredItems = (query, items) => {
-  if (!query) {
-    return items
-  }
-  return items.filter(productName => productName.includes(query))
-}
+const productName = productsArray
+  .filter(product => product.name)
+  .map(product => product.name)
+console.log(productName)
 
 export default function Searchbar() {
-  const [query, setQuery] = useState("")
+  const [value, setValue] = useState("")
 
-  const productName = productsArray
-    .filter(product => product.name)
-    .map(product => product.name)
-  console.log(productName)
+  const onChange = event => {
+    setValue(event.target.value)
+  }
 
-  const filteredItems = getfilteredItems(query, productName)
-  console.log(filteredItems)
+  const onSearch = searchTerm => {
+    setValue(searchTerm)
+    // our api to fetch the search result
+    console.log("search ", searchTerm)
+  }
 
   return (
     <div className="Searchbar">
-      <label>Search</label>
-      <input type="text" onChange={e => setQuery(e.target.value)} />
+      <h1>Search</h1>
 
-      {filteredItems.map(productName => (
-        <h1 key={productName}>{productName}</h1>
-      ))}
+      <div className="search-container">
+        <div className="search-inner">
+          <input type="text" value={value} onChange={onChange} />
+          <button onClick={() => onSearch(value)}> Search </button>
+        </div>
+        <div className="dropdown">
+          {productName
+            .filter(item => {
+              const searchTerm = value.toLowerCase()
+
+              return (
+                searchTerm &&
+                item.toLowerCase().startsWith(searchTerm) &&
+                item.toLowerCase() !== searchTerm
+              )
+            })
+            .slice(0, 10)
+            .map(item => (
+              <div
+                onClick={() => onSearch(item)}
+                className="dropdown-row"
+                key={item}
+              >
+                {item}
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   )
 }
