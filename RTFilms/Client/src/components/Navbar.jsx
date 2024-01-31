@@ -184,7 +184,7 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="/PointShoot"
+                  href="/PointShoot/products"
                   class="text-gray-900 dark:text-white hover:underline"
                 >
                   Point and Shoot

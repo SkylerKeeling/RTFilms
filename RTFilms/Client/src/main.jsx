@@ -12,6 +12,7 @@ import Accessories from "./components/Accessories.jsx"
 import Signin from "./components/signin.jsx"
 import Signup from "./components/signup.jsx"
 import Success from "./components/Success.jsx"
+import SingleProduct from "./components/SingleProducts.jsx"
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         element: <SingleLens />,
       },
       {
-        path: "/PointShoot",
+        path: "*",
         element: <PointShoot />,
       },
       {
