@@ -13,6 +13,8 @@ import Signin from "./components/signin.jsx"
 import Signup from "./components/signup.jsx"
 import Success from "./components/Success.jsx"
 import SingleProduct from "./components/SingleProducts.jsx"
+import SearchBar from "./components/Searchbar.jsx"
+import SearchbarPage from "./components/SearchbarPage.jsx"
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,7 @@ const router = createBrowserRouter([
         path: "/Success",
         element: <Success />,
       },
+      {path: "/search", element: <SearchbarPage />},
     ],
   },
 ])

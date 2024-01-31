@@ -5,6 +5,10 @@ import "./SingleProducts.css"
 import {Button} from "react-bootstrap"
 import ProductCard from "./ProductCard"
 
+$(window).on("popstate", function (event, state) {
+  $(".PointShoot").show()
+})
+
 const showProducts = () => {
   $(".PointShoot").show()
 }
