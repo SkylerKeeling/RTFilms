@@ -4,14 +4,15 @@ import ProductCard from "./ProductCard"
 import SingleProducts from "./SingleProducts"
 import TestComponent from "./TestComponent"
 
-function Film() {
-  const filmProducts = productsArray.filter(
-    product => product.category === "film"
+function Camcorder() {
+  const camProducts = productsArray.filter(
+    product => product.category === "camcorder"
   )
+  console.log("rendering PointShoot")
   return (
     <>
       <div className="PointShoot grid grid-cols-4 gap-4">
-        {filmProducts.map((product, idt) => (
+        {camProducts.map((product, idt) => (
           <div className="" key={idt}>
             <Link to={`/PointShoot/products/${product.id}`}>
               <ProductCard product={product}></ProductCard>
@@ -20,10 +21,10 @@ function Film() {
         ))}
       </div>
       <Routes>
-        <Route path="/Film/products/:id" element={<SingleProducts />} />
+        <Route path="/PointShoot/products/:id" element={<SingleProducts />} />
       </Routes>
     </>
   )
 }
 
-export default Film
+export default Camcorder

@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Signin from "./signin"
 import Signup from "./signup"
@@ -45,12 +46,12 @@ export default function Navbar() {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <a className="flex items-center">
-            <a
+            <Link
               href="/"
               className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
             >
               RTFilms
-            </a>
+            </Link>
           </a>
           <div className="flex items-center">
             <div className="flex md:order-2">
@@ -150,39 +151,52 @@ export default function Navbar() {
           <div className="flex items-center">
             <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
               <li>
-                <a
-                  href="/SingleLens"
+                <Link
+                  to="/SingleLens"
                   className="text-gray-900 dark:text-white"
                   aria-current="page"
                 >
                   Single Lens Reflex
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/PointShoot/products"
+                <Link
+                  to="/PointShoot/products"
                   className="text-gray-900 dark:text-white"
                 >
                   Point and Shoot
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/Lenses" className="text-gray-900 dark:text-white">
-                  Lenses
-                </a>
+                <Link to="/Polaroid" className="text-gray-900 dark:text-white ">
+                  Polaroid
+                </Link>
               </li>
               <li>
-                <a href="/Film" className="text-gray-900 dark:text-white">
+                <Link to="/Camcorder" className="text-gray-900 dark:text-white">
+                  Camcorder
+                </Link>
+              </li>
+              <li>
+                <Link to="/Film" className="text-gray-900 dark:text-white">
                   Film
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/Accessories"
+                <Link
+                  to="/Accessories"
                   className="text-gray-900 dark:text-white "
                 >
                   Accessories
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Batteries"
+                  className="text-gray-900 dark:text-white "
+                >
+                  Batteries
+                </Link>
               </li>
             </ul>
           </div>

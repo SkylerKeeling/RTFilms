@@ -20,7 +20,7 @@ def get_all_hrefs(url):
         return None
 
 # Example usage:
-url_to_scrape = 'https://retrocamerashop.com/collections/point-shoot'
+url_to_scrape = 'https://retrocamerashop.com/collections/batteries'
 href_list = get_all_hrefs(url_to_scrape)
 
 filtered_href_list = [href for href in href_list if href.startswith('/products/')]

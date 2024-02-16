@@ -15,6 +15,9 @@ import Success from "./components/Success.jsx"
 import SingleProduct from "./components/SingleProducts.jsx"
 import SearchBar from "./components/Searchbar.jsx"
 import SearchbarPage from "./components/SearchbarPage.jsx"
+import Polaroid from "./components/Polaroid.jsx"
+import Camcorder from "./components/Camcorder.jsx"
+import Batteries from "./components/Batteries.jsx"
 
 const router = createBrowserRouter([
   {
@@ -34,8 +37,8 @@ const router = createBrowserRouter([
         element: <PointShoot />,
       },
       {
-        path: "/Lenses",
-        element: <Lenses />,
+        path: "/Camcorder",
+        element: <Camcorder />,
       },
       {
         path: "/Film",
@@ -44,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/Accessories",
         element: <Accessories />,
+      },
+      {
+        path: "/Batteries",
+        element: <Batteries />,
       },
       {
         path: "/Signin",
@@ -56,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/Success",
         element: <Success />,
+      },
+      {
+        path: "/Polaroid",
+        element: <Polaroid />,
       },
       {path: "/search", element: <SearchbarPage />},
     ],

@@ -4,6 +4,7 @@ import PointShoot from "./PointShoot"
 import "./SingleProducts.css"
 import {Button} from "react-bootstrap"
 import ProductCard from "./ProductCard"
+import convertToCanadianDollar from "../utils/ConversionCAD"
 
 $(window).on("popstate", function (event, state) {
   $(".PointShoot").show()
@@ -19,8 +20,9 @@ const SingleProducts = () => {
   console.log("rendering singleproduct")
   const {id} = useParams()
   console.log("ID:", id, typeof id)
-  const product = productsArray.find(product => product.id === parseInt(id))
+  const product = productsArray.find(product => product.id === id)
   console.log(product)
+
   // if (!product) {
   //   return <div>Product not found</div>
   // }
@@ -28,7 +30,7 @@ const SingleProducts = () => {
     <>
       <div>
         <h1>{id}</h1>
-        <h1>{product.name}</h1>
+        <h1>{product.name[1]}</h1>
         <Link to="/PointShoot/products">
           <button onClick={showProducts} className="backButton">
             Back
@@ -43,7 +45,7 @@ const SingleProducts = () => {
                     <div class="max-w-xl overflow-hidden rounded-lg">
                       <img
                         class="h-full w-full max-w-full object-cover"
-                        src={product.imageUrl}
+                        src={product.imageUrl[1]}
                         alt=""
                       />
                     </div>
@@ -57,7 +59,7 @@ const SingleProducts = () => {
                       >
                         <img
                           class="h-full w-full object-cover"
-                          src={product.imageUrl}
+                          src={product.imageUrl[1]}
                           alt=""
                         />
                       </button>
@@ -68,7 +70,7 @@ const SingleProducts = () => {
 
               <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
                 <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
-                  {product.name}
+                  {product.name[1]}
                 </h1>
 
                 <div class="mt-5 flex items-center">
@@ -136,7 +138,9 @@ const SingleProducts = () => {
 
                 <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                   <div class="flex items-end">
-                    <h1 class="text-3xl font-bold">{product.price}$</h1>
+                    <h1 class="text-3xl font-bold">
+                      {convertToCanadianDollar(product.price)}$
+                    </h1>
                   </div>
 
                   <button
