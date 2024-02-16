@@ -42,27 +42,27 @@ export default function Navbar() {
 
   return (
     <>
-      <nav class="bg-white border-gray-200 dark:bg-gray-900">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-          <a class="flex items-center">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+          <a className="flex items-center">
             <a
               href="/"
-              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
             >
               RTFilms
             </a>
           </a>
-          <div class="flex items-center">
-            <div class="flex md:order-2">
+          <div className="flex items-center">
+            <div className="flex md:order-2">
               <button
                 type="button"
                 data-collapse-toggle="navbar-search"
                 aria-controls="navbar-search"
                 aria-expanded="false"
-                class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+                className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
               >
                 <svg
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -82,13 +82,13 @@ export default function Navbar() {
               <button
                 data-collapse-toggle="navbar-search"
                 type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-search"
                 aria-expanded="false"
               >
-                <span class="sr-only">Open main menu</span>
+                <span className="sr-only">Open main menu</span>
                 <svg
-                  class="w-5 h-5"
+                  className="w-5 h-5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -145,14 +145,14 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <nav class="bg-gray-50 dark:bg-gray-700">
-        <div class="max-w-screen-xl px-4 py-3 mx-auto">
-          <div class="flex items-center">
-            <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+      <nav className="bg-gray-50 dark:bg-gray-700">
+        <div className="max-w-screen-xl px-4 py-3 mx-auto">
+          <div className="flex items-center">
+            <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
               <li>
                 <a
                   href="/SingleLens"
-                  class="text-gray-900 dark:text-white hover:underline"
+                  className="text-gray-900 dark:text-white"
                   aria-current="page"
                 >
                   Single Lens Reflex
@@ -161,31 +161,25 @@ export default function Navbar() {
               <li>
                 <a
                   href="/PointShoot/products"
-                  class="text-gray-900 dark:text-white hover:underline"
+                  className="text-gray-900 dark:text-white"
                 >
                   Point and Shoot
                 </a>
               </li>
               <li>
-                <a
-                  href="/Lenses"
-                  class="text-gray-900 dark:text-white hover:underline"
-                >
+                <a href="/Lenses" className="text-gray-900 dark:text-white">
                   Lenses
                 </a>
               </li>
               <li>
-                <a
-                  href="/Film"
-                  class="text-gray-900 dark:text-white hover:underline"
-                >
+                <a href="/Film" className="text-gray-900 dark:text-white">
                   Film
                 </a>
               </li>
               <li>
                 <a
                   href="/Accessories"
-                  class="text-gray-900 dark:text-white hover:underline"
+                  className="text-gray-900 dark:text-white "
                 >
                   Accessories
                 </a>

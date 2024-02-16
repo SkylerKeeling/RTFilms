@@ -7,7 +7,7 @@ function ProductCard(props) {
   const productQuantity = cart.getProductQuantity(product.id)
 
   return (
-    <div class="w-full max-w-sm max-h-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full max-w-[260px] max-h-[482px] min-w-[260px] min-h-[482px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img
           class="p-8 rounded-t-lg"
