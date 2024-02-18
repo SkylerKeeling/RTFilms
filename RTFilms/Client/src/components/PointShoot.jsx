@@ -8,7 +8,6 @@ function PointShoot() {
   const pasProducts = productsArray.filter(
     product => product.category === "pas"
   )
-  console.log("rendering PointShoot")
   return (
     <>
       <div className="PointShoot grid grid-cols-4 gap-4">

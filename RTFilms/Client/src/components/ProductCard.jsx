@@ -16,6 +16,7 @@ function ProductCard(props) {
           alt="product image"
         />
       </a>
+
       <div class="px-5 pb-5">
         <a href="#">
           <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">

@@ -1,6 +1,7 @@
 .picture {
-  background-image: url("../assets/BG-image.jpg");
+  background-image: url("../assets/Home2.jpg");
   background-size: cover;
+  width: 100%;
 }
 
 .item1 {
